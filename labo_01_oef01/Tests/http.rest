@@ -1,0 +1,54 @@
+@host=localhost:5000
+
+GET http://{{host}}/wine/0 HTTP/1.1
+
+###
+
+GET http://{{host}}/wines HTTP/1.1
+
+###
+
+POST http://{{host}}/wines HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Chateau Pavie",
+  "year": 2002,
+  "country": "Frankrijk",
+  "color": "Red",
+  "price": 199,
+  "grapes": "Merlot, Cabernet Franc, Cabernet Sauvignon"
+}
+
+###
+
+DELETE  http://{{host}}/wines/2 HTTP/1.1
+
+###
+
+PUT  http://{{host}}/wines/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "heerlijk wijntje",
+  "year": 2002,
+  "country": "Frankrijk",
+  "color": "Red",
+  "price": 199,
+  "grapes": "Merlot, Cabernet Franc, Cabernet Sauvignon"
+}
+
+###
+POST http://{{host}}/wines HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Wijntje",
+  "year": 2002,
+  "country": "Frankrijk",
+  "color": "Red",
+  "price": 199,
+  "grapes": "Merlot, Cabernet Franc, Cabernet Sauvignon"
+}
+
+###
