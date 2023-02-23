@@ -76,7 +76,7 @@ app.MapPost("/wines", (IValidator<Wine> validator, Wine wine) =>
   var result = validator.Validate(wine);
   if (!result.IsValid)
   {
-    var error = result.Errors.Select(e => new { errors = e.ErrorMessage });
+    var error = result.Errors.Select(b => new { errors = b.ErrorMessage });
     return Results.BadRequest(error);
   }
   wine.WineId = wines.Max(w => w.WineId) + 1;
