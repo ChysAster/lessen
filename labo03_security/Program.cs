@@ -19,4 +19,10 @@ app.MapGet("/setup", async (ISneakerService sneakerService) =>
   return "Setup Done";
 });
 
+app.MapGet("/brands", async (ISneakerService sneakerService) =>
+{
+  return await sneakerService.GetAllBrands();
+
+});
+
 app.Run("http://localhost:5000");
