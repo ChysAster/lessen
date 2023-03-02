@@ -1,0 +1,9 @@
+global using labo03_security.Configuration;
+global using labo03_security.DataContext;
+global using labo03_security.Models;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization.Attributes;
+global using MongoDB.Driver;
+global using Microsoft.Extensions.Options;
+global using labo03_security.Services;
+global using labo03_security.Repositories;

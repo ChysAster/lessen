@@ -1,0 +1,4 @@
+@host=localhost:5000
+
+###
+GET  http://{{host}}/setup HTTP/1.1
