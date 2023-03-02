@@ -7,3 +7,4 @@ global using MongoDB.Driver;
 global using Microsoft.Extensions.Options;
 global using labo03_security.Services;
 global using labo03_security.Repositories;
+global using labo03_security.Middleware;

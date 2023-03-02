@@ -3,13 +3,19 @@ var builder = WebApplication.CreateBuilder(args);
 var settings = builder.Configuration.GetSection("MongoConnection");
 builder.Services.Configure<DatabaseSettings>(settings);
 
+var apiKeySettings = builder.Configuration.GetSection("ApiKeySettings");
+builder.Services.Configure<ApiKeySettings>(apiKeySettings);
 builder.Services.AddTransient<IMongoContext, MongoContext>();
 builder.Services.AddTransient<IBrandRepository, BrandRepository>();
 builder.Services.AddTransient<IOccasionRepository, OccasionRepository>();
 builder.Services.AddTransient<ISneakerRepository, SneakerRepository>();
 builder.Services.AddTransient<ISneakerService, SneakerService>();
 
+
+
 var app = builder.Build();
+
+app.UseMiddleware<ApiKeyMiddleware>();
 
 app.MapGet("/", () => "Hello World!");
 
