@@ -5,5 +5,3 @@ GET  http://{{host}}/setup HTTP/1.1
 
 ###
 GET  http://{{host}}/brands HTTP/1.1
-
-test
