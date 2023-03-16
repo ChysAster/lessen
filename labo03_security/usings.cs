@@ -7,3 +7,7 @@ global using MongoDB.Driver;
 global using Microsoft.Extensions.Options;
 global using labo03_security.Services;
 global using labo03_security.Repositories;
+global using Microsoft.IdentityModel.Tokens;
+global using System.IdentityModel.Tokens.Jwt;
+global using System.Security.Claims;
+global using Microsoft.AspNetCore.Authorization;

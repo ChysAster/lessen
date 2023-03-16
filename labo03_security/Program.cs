@@ -8,8 +8,12 @@ builder.Services.AddTransient<IBrandRepository, BrandRepository>();
 builder.Services.AddTransient<IOccasionRepository, OccasionRepository>();
 builder.Services.AddTransient<ISneakerRepository, SneakerRepository>();
 builder.Services.AddTransient<ISneakerService, SneakerService>();
+builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 
 var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");
 
@@ -24,5 +28,7 @@ app.MapGet("/brands", async (ISneakerService sneakerService) =>
   return await sneakerService.GetAllBrands();
 
 });
+
+
 
 app.Run("http://localhost:5000");
