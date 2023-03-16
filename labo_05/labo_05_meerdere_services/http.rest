@@ -1,0 +1,16 @@
+GET http://localhost:5010/v1.0/invoke/service1/method/ HTTP/1.1
+
+
+###
+
+
+GET http://localhost:5011/v1.0/invoke/service2/method/ HTTP/1.1
+
+
+
+
+###
+
+
+GET http://localhost:5012/v1.0/invoke/service3/method/ HTTP/1.1
+

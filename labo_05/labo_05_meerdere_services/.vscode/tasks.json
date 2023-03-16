@@ -1,0 +1,152 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-service1",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/service1/service1.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-service2",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/service2/service2.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-service3",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/service3/service3.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/service1/service1.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/service1/service2.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/service1/service3.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/service1/service1.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/service2/service2.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/service3/service3.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "appId": "service1",
+      "appPort": 5003,
+      "httpPort": 5010,
+      "label": "daprd-debug-service1",
+      "type": "dapr",
+      "dependsOn": "build-service1"
+    },
+    {
+      "appId": "service1",
+      "label": "daprd-down-service1",
+      "type": "daprd-down"
+    },
+    {
+      "appId": "service2",
+      "appPort": 5004,
+      "httpPort": 5011,
+      "label": "daprd-debug-service2",
+      "type": "dapr",
+      "dependsOn": "build-service2"
+    },
+    {
+      "appId": "service2",
+      "label": "daprd-down-service2",
+      "type": "daprd-down"
+    },
+    {
+      "appId": "service3",
+      "appPort": 5005,
+      "httpPort": 5012,
+      "label": "daprd-debug-service3",
+      "type": "dapr",
+      "dependsOn": "build-service3"
+    },
+    {
+      "appId": "service3",
+      "label": "daprd-down-service3",
+      "type": "daprd-down"
+    }
+  ]
+}

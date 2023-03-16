@@ -1,0 +1,77 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "All Services",
+      "configurations": ["Service1","Service2","Service3"]
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Service1",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "daprd-debug-service1",
+      "program": "${workspaceFolder}/service1/bin/Debug/net7.0/service1.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/service1",
+      "stopAtEntry": false,
+      // "serverReadyAction": {
+      //   "action": "openExternally",
+      //   "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      // },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "postDebugTask": "daprd-down-service1"
+    },
+    {
+      "name": "Service2",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "daprd-debug-service2",
+      "program": "${workspaceFolder}/service2/bin/Debug/net7.0/service2.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/service2",
+      "stopAtEntry": false,
+      // "serverReadyAction": {
+      //   "action": "openExternally",
+      //   "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      // },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "postDebugTask": "daprd-down-service2"
+    },
+    {
+      "name": "Service3",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "daprd-debug-service3",
+      "program": "${workspaceFolder}/service3/bin/Debug/net7.0/service3.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/service3",
+      "stopAtEntry": false,
+      // "serverReadyAction": {
+      //   "action": "openExternally",
+      //   "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      // },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "postDebugTask": "daprd-down-service3"
+    }
+  ]
+}
