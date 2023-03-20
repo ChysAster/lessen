@@ -45,7 +45,7 @@ app.MapGet("/secret/{key}", async ([FromServices] DaprClient daprClient, string 
   return Results.Ok(result);
 });
 
-app.MapGet("/createorder", async ([FromServices] DaprClient daprClient) =>
+app.MapGet("createorder", async ([FromServices] DaprClient daprClient) =>
 {
   var order = new Order(Guid.NewGuid().ToString(), "Order 1", "Order 1 Description", "New");
   await daprClient.PublishEventAsync<Order>("redis-pubsub", "orders", order);

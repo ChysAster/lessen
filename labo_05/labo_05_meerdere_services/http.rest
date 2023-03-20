@@ -67,7 +67,3 @@ GET http://localhost:5010/v1.0/invoke/service1/method/secret/redisPassword HTTP/
 
 ###
 GET http://localhost:5010/v1.0/invoke/service1/method/createorder HTTP/1.1
-
-###
-POST http://localhost:5010/v1.0/invoke/service2/method/orders HTTP/1.1
-Content-Type: application/json

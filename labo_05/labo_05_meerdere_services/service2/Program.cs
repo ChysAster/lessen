@@ -21,6 +21,7 @@ app.MapPost("/orders", [Topic("redis-pubsub", "orders")] (Order order) =>
 app.UseCloudEvents();
 app.MapSubscribeHandler();
 app.Run();
+//nadeel microservices is dubbele code
 record Order(string Id, string Name, string Description, string Status);
 record MessageReply(string status);
 
