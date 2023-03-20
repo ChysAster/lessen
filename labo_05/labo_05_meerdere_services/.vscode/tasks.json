@@ -113,8 +113,10 @@
       "appId": "service1",
       "appPort": 5003,
       "httpPort": 5010,
+      "grpcPort": 60001,
       "label": "daprd-debug-service1",
       "type": "dapr",
+      "componentsPath": "./components",
       "dependsOn": "build-service1"
     },
     {
@@ -126,8 +128,10 @@
       "appId": "service2",
       "appPort": 5004,
       "httpPort": 5011,
+      "grpcPort": 60002,
       "label": "daprd-debug-service2",
       "type": "dapr",
+      "componentsPath": "./components", //zorgen dat hij naar components map kan zoeken
       "dependsOn": "build-service2"
     },
     {
@@ -139,8 +143,10 @@
       "appId": "service3",
       "appPort": 5005,
       "httpPort": 5012,
+      "grpcPort": 60003,
       "label": "daprd-debug-service3",
       "type": "dapr",
+      "componentsPath": "./components",
       "dependsOn": "build-service3"
     },
     {
